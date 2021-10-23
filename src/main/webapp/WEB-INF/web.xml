@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+	<display-name>TrabJavaWeb</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>Logon</servlet-name>
+		<servlet-class>controller.logonServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Logon</servlet-name>
+		<url-pattern>/logon</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Logon</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>controller.mainServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Signup</servlet-name>
+		<servlet-class>controller.SignupServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Signup</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Signup</servlet-name>
+		<url-pattern>/loginVerify</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Produtos</servlet-name>
+		<servlet-class>controller.ProdutosServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Produtos</servlet-name>
+		<url-pattern>/listarProdutos</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Produtos</servlet-name>
+		<url-pattern>/insertProduto</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Usuarios</servlet-name>
+		<servlet-class>controller.UsuariosServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Usuarios</servlet-name>
+		<url-pattern>/listarUsuarios</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Pedidos</servlet-name>
+		<servlet-class>controller.PedidosServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Pedidos</servlet-name>
+		<url-pattern>/comprarProduto</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Pedidos</servlet-name>
+		<url-pattern>/listarPedido</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Profile</servlet-name>
+		<servlet-class>controller.ProfileServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Profile</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>controller.HomeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
