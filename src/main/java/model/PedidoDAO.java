@@ -3,10 +3,11 @@ package model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class PedidoDAO {
-	public void efetuarCompra(int idUsuario, int idProduto){
+	public void efetuarCompra(Pedido pedido){
 		String sql = "insert into pedido ( cliente_id , produto_id ) values (?,?)";
 		try {
 			ConnectionFactory dao = new ConnectionFactory();
@@ -15,15 +16,15 @@ public class PedidoDAO {
 
 			PreparedStatement pst = con.prepareStatement(sql);
 
-			pst.setInt(1, idUsuario);
-			pst.setInt(2, idProduto);
+			pst.setInt(1, pedido.getUsuario().getIdCliente());
+			pst.setInt(2, pedido.getProduto().getId());
 
 			pst.executeUpdate();
 
 			con.close();
 
 			ProdutoDAO prodDAO = new ProdutoDAO();
-			prodDAO.removeUm(idProduto);
+			prodDAO.removeUm(pedido.getProduto().getId());
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -44,7 +45,7 @@ public class PedidoDAO {
 			while (rs.next()) {
 				int idPedido = rs.getInt(1);
 				int idProduto= rs.getInt(2);
-				String data = rs.getString(3);
+				java.sql.Date data = rs.getDate(3);
 				
 				prod = prodDao.listaPorId(idProduto);
 				
@@ -79,7 +80,7 @@ public class PedidoDAO {
 				int idPedido = rs.getInt(1);
 				int idUsuario = rs.getInt(2);
 				int idProduto = rs.getInt(3);
-				String data = rs.getString(4);
+				java.sql.Date data = rs.getDate(4);
 				
 				prod = prodDao.listaPorId(idProduto);
 				usuario = usuarioDAO.listaPorId(idUsuario);

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="model.Pedido"%>
+    <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 				<li class="nav-item"><a class="nav-link"
 					href="cadastrar_produto.jsp">Cadastrar novo produto</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="./listar_produtos.jsp">Listar produtos</a></li>
+					href="./listar_produtos.jsp">Comprar produto</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="./listar_usuarios.jsp">Listar usuários</a></li>
 			</ul>
@@ -38,8 +39,8 @@
 
 	<h3>Produto: <% out.println(pedido.getProduto().getNome()); %></h3>
 	<h3>Preço: <% out.println(pedido.getProduto().getCusto()); %></h3>
-	<h3>Endereço de entrega: <% out.println(pedido.getUsuario().getEndereco()); %></h3>
 	<h3>Remetente: <% out.println(pedido.getUsuario().getNome()); %></h3>
+	<h3>Endereço de entrega: <% out.println(pedido.getUsuario().getEndereco()); %></h3>
 	<h3>Data da compra: <% out.println(pedido.getData()); %></h3>
 	<h3>CPF: <% out.println(pedido.getUsuario().getCpf()); %></h3>
 	

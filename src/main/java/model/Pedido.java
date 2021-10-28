@@ -1,19 +1,27 @@
 package model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Pedido {
 	private int id;
 	private Usuario usuario;
 	private Produto produto;
-	private String data;
+	private Date data;
 	
-	public Pedido(int id, Usuario usuario, Produto produto, String data) {
+	public Pedido(Usuario usuario, Produto produto) {
+		this.usuario = usuario;
+		this.produto = produto;
+	}
+	
+	public Pedido(int id, Usuario usuario, Produto produto, Date data) {
 		this.id = id;
 		this.usuario = usuario;
 		this.produto = produto;
 		this.data = data;
 	}
 	
-	public Pedido(int id, Usuario usuario, String data) {
+	public Pedido(int id, Usuario usuario, Date data) {
 		this.id = id;
 		this.usuario = usuario;
 		this.data = data;
@@ -38,9 +46,11 @@ public class Pedido {
 		this.produto = produto;
 	}
 	public String getData() {
-		return data;
+		SimpleDateFormat f = new SimpleDateFormat("dd/MM/yy");
+		String dataFormatada = f.format(this.data);
+		return dataFormatada;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 }

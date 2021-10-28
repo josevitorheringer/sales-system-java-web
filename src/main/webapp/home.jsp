@@ -33,7 +33,7 @@ main {
 				<li class="nav-item"><a class="nav-link"
 					href="cadastrar_produto.jsp">Cadastrar novo produto</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="./listar_produtos.jsp">Listar produtos</a></li>
+					href="./listar_produtos.jsp">Comprar produto</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="./listar_usuarios.jsp">Listar usuários</a></li>
 			</ul>
